@@ -1,0 +1,221 @@
+/* Оформление боковой панели */
+#side-checkbox {
+    display: none;
+}
+.side-panel {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    right: -540px;
+    background: #337AB7;
+    transition: all 0.5s;  
+    width: 300px;
+    height: 100vh;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+    color: #FFF;
+    padding: 40px 20px;
+}
+.side-title {
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #BFE2FF;
+}
+/* Оформление кнопки на странице */
+.side-button-1-wr {
+    text-align: center; /* Контейнер для кнопки, чтобы было удобнее ее разместить */
+}
+.side-button-1 .side-b {
+    margin: 10px;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+    background: #337AB7;
+    cursor: pointer;
+    border: 2px solid #BFE2FF;
+}
+.side-button-1 .side-b:hover,
+.side-button-1 .side-b:active,
+.side-button-1 .side-b:focus {
+    color: #FFF;
+}
+.side-button-1 .side-b:after,
+.side-button-1 .side-b:before {
+    position: absolute;
+    height: 4px;
+    right: 50%;
+    bottom: -6px;
+    content: "";
+    /*transition: all 280ms ease-in-out;*/
+    width: 0;
+}
+
+/* 
+.side-button-1 .side-open:after,
+.side-button-1 .side-open:before {
+   background: green;
+}
+*/
+
+.side-button-1 .side-close:after,
+.side-button-1 .side-close:before {
+    background: red;
+}
+.side-button-1 .side-b:before {
+    top: -6px;
+}
+.side-button-1 .side-b:hover:after,
+.side-button-1 .side-b:hover:before {
+    width: 100%;
+    right: 0;
+}
+/* Переключатели кнопки 1 */
+.side-button-1 .side-close {
+    display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-open {
+    display: none;
+}
+#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-close {
+    display: block;
+}
+#side-checkbox:checked + .side-panel {
+    right: 0;
+}
+/* Оформление кнопки на панеле */
+.side-button-2 {
+    font-size: 30px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    color: #BFE2FF;   
+    transition: all 280ms ease-in-out;   
+}
+.side-button-2:hover {
+    transform: rotate(45deg) scale(1.1);   
+    color: #FFF;
+}
+
+/* ВНЕШНИЙ БЛОК */
+#panel {
+
+    z-index: 999999;
+    position: absolute; /* положение */
+    top: 100px; /* отступ сверху */
+    right: 10px; /* отступ слева */
+    background: green; /* цвет фона */
+    width: 40px; /* ширина блока */
+    height: 30px; /* высота блока */
+    font: 14px Arial; /* размер и тип шрифта */
+    color: #fff; /* цвет текста */
+    text-align: center; /* выравнивание текста по центру */
+    padding: 5px; /* отступы от границ внутри блока */
+
+    -webkit-transition-duration: 0.3s; /* анимационное выдвижение для всех браузеров*/
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+
+    -webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    }
+
+/* СКРЫТЫЙ БЛОК */
+#hidden_panel {
+    bottom: 0px;
+    z-index: 999999;
+    position: fixed; /* положение */
+    top: 100px; /* отступ сверху */
+    right: -350px; /* отступ слева */
+    background: lavender; /* цвет фона */
+    color: #000; /* цвет текста */
+    width: 300px; /* ширина блока */
+    height: 4000px; /* высота блока */
+    padding: 10px; /* отступы от границ внутри блока */
+    text-align: left; /* выравнивание текста */
+
+    -webkit-transition-duration: 0.01s; /* анимационное выдвижение для всех браузеров*/
+    -moz-transition-duration: 0.01s;
+    -o-transition-duration: 0.01s;
+    transition-duration: 0.01s;
+
+    -webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    }
+#panel:hover {
+    right: 50px; /* при наведении выдвигается на скрытые 200px + 20px отступы */
+}
+#panel:hover #hidden_panel {
+    right: 0; /* отступ слева */
+}
+
+/*///////////////////////////////////////////////////////////*/
+.filters{
+    display: flex;
+
+}
+
+.filters_checkboxes{
+    margin-left: 20px;
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.filters_prices{
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.main .card-list{
+    flex-wrap: wrap;
+}
+.main .card-list img{
+    height: 288px;
+    width: min-content;
+    max-width: 288px;
+    align-self: center;
+}
+.main .card-list img {
+    display: inline-block; /* Строчно-блочный элемент */
+    overflow: hidden; /* Скрываем всё за контуром */
+   }
+   .main .card-list img {
+    transition: 1s; /* Время эффекта */
+    display: block; /* Убираем небольшой отступ снизу */
+   }
+   .main .card-list img:hover {
+    transform: scale(1.3); /* Увеличиваем масштаб */
+   }
+
+/* Оформление кнопки на панеле */
+.side-button-3 {
+    /*font-size: 30px;*/
+    border-radius: 20px;
+    /*position: absolute;*/
+    z-index: 1;
+
+    cursor: pointer;
+    
+    color: #BFE2FF;   
+    transition: all 280ms ease-in-out;   
+}
+.side-button-3:hover {
+       
+    color: #FFF;
+}

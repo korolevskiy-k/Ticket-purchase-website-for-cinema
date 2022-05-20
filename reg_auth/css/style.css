@@ -1,0 +1,10 @@
+form, h2, p{
+	width: 500px;
+	margin-left: 300px;
+}
+#reg_btn{
+	font-size: 30pt;
+}
+#auth_btn{
+	color: red;
+}
